@@ -13,7 +13,7 @@ function getLengthOfString() {
   const screenWidth =  window.innerWidth
   || document.documentElement.clientWidth
   || document.body.clientWidth;
-  const maxLengthPercentage = 0.50; 
+  const maxLengthPercentage = 0.50;
   const maxLength = (screenWidth * maxLengthPercentage) / 100;
   const length = Math.floor(10 * maxLength) + 1;
 
@@ -26,9 +26,9 @@ function injectStringToOther(original, pasted, place) {
 
 function transitionToPage(href) {
   document.querySelector('body').style.opacity = 0
-  setTimeout(function() { 
+  setTimeout(function() {
       window.location.href = href
-  }, 500)
+  }, 500);
 }
 
 
@@ -41,10 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // POSITION / LENGTH; CALCULATION BY RECOMMENDED POS / 80;
     { row: 1, position: 0.1, url: './pages/about-me.html', text: 'MIROSLAW', short: 'MIRA' },
     { row: 5, position: 0.1875, url: './pages/about-me.html', text: 'FULLSTACK-DEVELOPER', short: 'FULLSTACK' },
-    { row: 8, position: 0.25, url: './pages/contact-me.html', text: 'CONTACT-INFO', short: 'CONTACT' }
+    { row: 8, position: 0.25, url: './pages/contact-me.html', text: 'CONTACT-INFO', short: 'CONTACT' },
+    { row: 6, position: 0.5, url: './pages/experience.html', text: 'CSHARP', short: 'C#' }
   ];
 
-  setTimeout(() => { 
+  setTimeout(() => {
     IS_LINKS_LOADED = true;
   }, 4500);
 
@@ -112,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             input = newTextContent;
-          } 
+          }
         }
       }
 
