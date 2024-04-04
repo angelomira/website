@@ -24,19 +24,26 @@ form.addEventListener('submit', (event) => {
     return;
   }
 
-  const formData = { 'email': `${email}`, 'message': `${message}` };
+  const formData = { 'email': email, 'message': message };
 
-  const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'http://localhost:3000/submit-form');
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send(JSON.stringify(formData));
-
-  // Handle the response from the server
-  xhr.onload = function() {
-    if (xhr.status === 200) {
+  fetch('http://localhost:3000/submit-form', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (response.ok) {
       console.log('Form data saved successfully');
+      // You can add additional logic here, such as showing a success message
     } else {
       console.error('Internal Server Error');
+      // You can add additional error handling here, such as showing an error message
     }
-  };
+  })
+  .catch(error => {
+    console.error('Network error:', error);
+    // You can add additional error handling here, such as showing a network error message
+  });
 });
