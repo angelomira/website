@@ -23,7 +23,7 @@ form.addEventListener('submit', (event) => {
     alert('Please enter your message.');
     return;
   }
-
+  
   const formData = { 'email': email, 'message': message };
 
   fetch('http://localhost:3000/submit-form', {
